@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MovieApp</string>
+    <string name="title">Movie</string>
+    <string name="search">Search Movie</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_world">hello world</string>
+    <string name="hometxt">Home</string>
+    <string name="trendingTxt">Trending</string>
+    <string name="NowShowingTxt">Now Showing</string>
+    <string name="title_activity_detail">DetailActivity</string>
+
+</resources>
