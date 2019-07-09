@@ -15,7 +15,6 @@ import com.android.volley.Response.Listener
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
-import com.google.gson.JsonObject
 import com.google.gson.reflect.TypeToken
 import ite3.androiddev.movieapp.R
 import ite3.androiddev.movieapp.adapters.MovieAdapter

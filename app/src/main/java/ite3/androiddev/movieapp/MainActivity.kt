@@ -25,18 +25,21 @@ class MainActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.home_fragment, DiscoverFragment())
                     .commit()
-                return@setNavigationItemSelectedListener true
+                drawerLayout.closeDrawers()
+                return@setNavigationItemSelectedListener false
             }
             R.id.menu_search -> {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.home_fragment, SearchFragment())
                     .commit()
+                drawerLayout.closeDrawers()
                 return@setNavigationItemSelectedListener true
             }
             R.id.menu_about -> {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.home_fragment, AboutFragment())
                     .commit()
+                drawerLayout.closeDrawers()
                 return@setNavigationItemSelectedListener true
             }
         }

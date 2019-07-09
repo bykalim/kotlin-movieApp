@@ -12,7 +12,13 @@
     <string name="title_activity_detail">DetailActivity</string>
     <string name="open">Open</string>
     <string name="close">Open</string>
-    <string name="about">about</string>
+    <string name="about">About</string>
     <string name="discover">Discover</string>
+    <string name="aboutDetail">The Movie Database (TMDb) is a community built movie and TV database. Every piece of data
+        has been added by our amazing community dating back to 2008. TMDb\'s strong international focus and breadth of
+        data is largely unmatched and something we\'re incredibly proud of. Put simply, we live and breathe community
+        and that\'s precisely what makes us different.
+    </string>
+    <string name="result">- Result -</string>
 
 </resources>
