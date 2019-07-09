@@ -1,20 +1,20 @@
 package ite3.androiddev.movieapp.adapters
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.button.MaterialButton
 import ite3.androiddev.movieapp.R
 import ite3.androiddev.movieapp.models.Genre
-import kotlinx.android.synthetic.main.categories_chip.view.*
+import kotlinx.android.synthetic.main.item_genre.view.*
 
-class GenreAdapter(private val genreList: Array<Genre>) : RecyclerView.Adapter<GenreAdapter.ViewHolder>() {
+class GenreAdapter(private val genreList: List<Genre>) : RecyclerView.Adapter<GenreAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val btn = LayoutInflater
+        return ViewHolder(LayoutInflater
             .from(parent.context)
-            .inflate(R.layout.categories_chip,parent, false) as MaterialButton
-        return ViewHolder(btn)
+            .inflate(R.layout.item_genre,parent, false)
+        )
     }
 
     override fun getItemCount(): Int {
@@ -22,9 +22,11 @@ class GenreAdapter(private val genreList: Array<Genre>) : RecyclerView.Adapter<G
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.itemView.chipBtn.text = genreList[position].name
+        holder.genreHolder.text = genreList[position].name
     }
 
-    class ViewHolder(btn:MaterialButton) : RecyclerView.ViewHolder(btn)
+    class ViewHolder(btn: View) : RecyclerView.ViewHolder(btn){
+        val genreHolder: Button = btn.button
+    }
 
 }

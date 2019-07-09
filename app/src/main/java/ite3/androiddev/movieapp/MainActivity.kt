@@ -4,8 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
-import ite3.androiddev.movieapp.fragments.NowShowing
-import ite3.androiddev.movieapp.fragments.TrendingFragment
+import androidx.appcompat.app.ActionBarDrawerToggle
+import ite3.androiddev.movieapp.fragments.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -15,17 +15,45 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
+        val drawerToggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close)
+        drawerLayout.addDrawerListener(drawerToggle)
+        drawerToggle.syncState()
+
+        navigation_view.setNavigationItemSelectedListener {
+            item->when(item.itemId){
+            R.id.menu_discover -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.home_fragment, DiscoverFragment())
+                    .commit()
+                return@setNavigationItemSelectedListener true
+            }
+            R.id.menu_search -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.home_fragment, SearchFragment())
+                    .commit()
+                return@setNavigationItemSelectedListener true
+            }
+            R.id.menu_about -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.home_fragment, AboutFragment())
+                    .commit()
+                return@setNavigationItemSelectedListener true
+            }
+        }
+            false
+        }
+
         if (savedInstanceState == null)
         supportFragmentManager
             .beginTransaction()
             .add(R.id.home_fragment, NowShowing())
             .commit()
 
+
         bottomNavigationView.setOnNavigationItemSelectedListener {
             menuItem: MenuItem ->
             when(menuItem.itemId){
                 R.id.menu_trending -> {
-                    Toast.makeText(this,"selected",Toast.LENGTH_LONG).show()
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.home_fragment, TrendingFragment())
                         .commit()

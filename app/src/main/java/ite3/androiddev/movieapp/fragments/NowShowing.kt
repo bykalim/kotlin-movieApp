@@ -53,7 +53,7 @@ class NowShowing : Fragment() {
                 movies = Gson().fromJson(responseResult.toString(),movieType)
 
                 viewManager = LinearLayoutManager(context)
-                viewAdapter = MovieAdapter(movies)
+                viewAdapter = MovieAdapter(movies.take(5))
 
                 recyclerView = movieCard_recycler.apply {
                     setHasFixedSize(true)
