@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:clickable="true"
+              android:layout_height="150dp" android:background="@color/design_default_color_primary_dark">
+    <TextView
+            android:textSize="24dp"
+            android:padding="16dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:text="Welcome to Asguard Theater"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView4"
+            android:layout_weight="1" android:gravity="center_horizontal|bottom"/>
+</LinearLayout>
